@@ -1,6 +1,4 @@
-# Yesterday's Weather Server
-
-A Node.js API server that compares today's weather with yesterday's conditions using the National Weather Service API.
+# What's the weather now compared to yesterday? Because we all know how it felt.
 
 ## Features
 
@@ -31,16 +29,13 @@ The server will start on port 3000 by default.
 ### Compare Weather
 
 ```
-POST /api/weather/compare
+GET /api/weather/compare?latitude={lat}&longitude={lon}
 ```
 
-Request body:
+Example:
 
-```json
-{
-  "latitude": number,
-  "longitude": number
-}
+```
+GET /api/weather/compare?latitude=37.7749&longitude=-122.4194
 ```
 
 Response:
@@ -66,6 +61,10 @@ Response:
   "comparison": string
 }
 ```
+
+Example comparison:
+
+> "This morning is notably warmer than yesterday and quite hot with skies clearing up"
 
 ## Development
 
